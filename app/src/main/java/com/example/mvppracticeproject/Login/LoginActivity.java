@@ -3,6 +3,7 @@ package com.example.mvppracticeproject.Login;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,12 +15,14 @@ import android.widget.Toast;
 
 import com.example.mvppracticeproject.Home.HomeActivity;
 import com.example.mvppracticeproject.R;
+import com.example.mvppracticeproject.Signup.SignupActivity;
 
 public class LoginActivity extends AppCompatActivity implements ILogin {
 
     AppCompatButton bsubmit;
     AppCompatEditText ephonemunber,epassword;
     String password,phone;
+    AppCompatTextView tSignup;
     LoginPresenter loginPresenter;
 
 
@@ -36,6 +39,8 @@ public class LoginActivity extends AppCompatActivity implements ILogin {
         bsubmit = findViewById(R.id.button_submit);
         ephonemunber = findViewById(R.id.phone_number);
         epassword = findViewById(R.id.e_password);
+        tSignup = findViewById(R.id.Sign_Up);
+
 
 
 
@@ -53,6 +58,14 @@ public class LoginActivity extends AppCompatActivity implements ILogin {
         });
 
 
+        tSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     @Override
