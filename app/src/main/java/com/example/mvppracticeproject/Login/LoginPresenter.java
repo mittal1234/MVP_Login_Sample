@@ -1,6 +1,5 @@
 package com.example.mvppracticeproject.Login;
 
-import android.content.Intent;
 import android.text.TextUtils;
 
 public class LoginPresenter {
@@ -13,22 +12,30 @@ public class LoginPresenter {
 
     }
 
-    public void onLogin(String email, String phone) {
+    public void onLogin(String password, String phone, String storepassword, String storephone) {
 
-        if (onValidation(email, phone)) {
-            callback.onLogin(email, phone);
+        if (onValidation(password, phone, storepassword, storephone)) {
+            callback.onLogin(password, phone, storepassword, storephone);
         }
 
     }
 
-    public  boolean onValidation(String email,String phone){
+    public boolean onValidation(String password, String phone, String storepassword, String storephone) {
 
-        if (TextUtils.isEmpty(email)){
-            callback.onError("Email is empty.");
+        if (TextUtils.isEmpty(password)) {
+            callback.onError("Password is empty.");
             return false;
         }
-        if (TextUtils.isEmpty(phone)){
-            callback.onError("Password is empty.");
+        if (TextUtils.isEmpty(phone)) {
+            callback.onError("email is empty.");
+            return false;
+        }
+        if (!phone.equals(storephone)) {
+            callback.onError("wrong phone number");
+            return false;
+        }
+        if (!storepassword.equals(password)) {
+            callback.onError("wrong password ");
             return false;
         }
         return true;

@@ -39,12 +39,12 @@
             android:layout_width="300dp"
             android:layout_height="30dp"
             android:text="Register"
-            android:gravity="right||center"
+            android:gravity="right|center"
             android:id="@+id/Sign_Up"
             android:scrollbarSize="20sp"
             android:textColor="@color/colorPrimaryDark"
 
-            ></androidx.appcompat.widget.AppCompatTextView>
+            />
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="300dp"
             android:layout_height="40dp"

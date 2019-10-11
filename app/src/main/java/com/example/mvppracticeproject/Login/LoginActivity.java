@@ -1,17 +1,15 @@
 package com.example.mvppracticeproject.Login;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
-
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import com.example.mvppracticeproject.Home.HomeActivity;
 import com.example.mvppracticeproject.R;
@@ -19,39 +17,35 @@ import com.example.mvppracticeproject.Signup.SignupActivity;
 
 public class LoginActivity extends AppCompatActivity implements ILogin {
 
-    AppCompatButton bsubmit;
-    AppCompatEditText ephonemunber,epassword;
-    String password,phone;
+    AppCompatButton bSubmit;
+    AppCompatEditText ePhonemunber, ePassword;
+    String password, phone, storePhoneNumber, storePassword;
     AppCompatTextView tSignup;
     LoginPresenter loginPresenter;
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-    loginPresenter =new LoginPresenter(this);
-
-
-
-        bsubmit = findViewById(R.id.button_submit);
-        ephonemunber = findViewById(R.id.phone_number);
-        epassword = findViewById(R.id.e_password);
+        loginPresenter = new LoginPresenter(this);
+        bSubmit = findViewById(R.id.button_submit);
+        ePhonemunber = findViewById(R.id.phone_number);
+        ePassword = findViewById(R.id.e_password);
         tSignup = findViewById(R.id.Sign_Up);
 
 
-
-
-        bsubmit.setOnClickListener(new View.OnClickListener() {
+        bSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                password = epassword.getText().toString().trim();
-                phone = ephonemunber.getText().toString().trim();
-                    loginPresenter.onLogin(password,phone);
 
+                SharedPreferences prefs = getSharedPreferences("data", MODE_PRIVATE);
+                storePhoneNumber = prefs.getString("phonenumber", "");
+                storePassword = prefs.getString("password", "");
 
+                password = ePassword.getText().toString().trim();
+                phone = ePhonemunber.getText().toString().trim();
+                loginPresenter.onLogin(password, phone, storePassword, storePhoneNumber);
 
 
             }
@@ -61,41 +55,29 @@ public class LoginActivity extends AppCompatActivity implements ILogin {
         tSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(LoginActivity.this, SignupActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
     }
 
+
+
     @Override
-    public void onLogin(String phone, String password) {
-//        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-//        SharedPreferences.Editor editor=sharedPref.edit();
-//        editor.putInt("key",1);
-//        editor.commit();
-
-//        int i=sharedPref.getInt("key",0);
-
-//        System.out.println("message"+i);
-//        Log.d("message", "onLogin: "+ i);
-//
-
+    public void onLogin(String email, String password, String Storepassword, String Storephonenumber) {
         SharedPreferences.Editor editor = getSharedPreferences("key", MODE_PRIVATE).edit();
         editor.putInt("idName", 1);
         editor.apply();
 
-        Intent intent=new Intent(this,HomeActivity.class);
+
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
-
-
-
 
     }
 
     @Override
     public void onError(String message) {
-
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

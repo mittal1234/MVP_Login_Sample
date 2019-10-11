@@ -15,19 +15,14 @@ import com.example.mvppracticeproject.Login.LoginActivity;
 
 public class SplashScreen extends AppCompatActivity {
     int value;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//
+
         SharedPreferences prefs = getSharedPreferences("key", MODE_PRIVATE);
         final int idName = prefs.getInt("idName", 0); //0 is the default value.
-
-//        SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
-//        value = sharedPreferences.getInt("key", 0);
-//        System.out.println("value"+value);
-//        Log.d("value", "onLogin: "+ value);
-
 
         new Handler().postDelayed(new Runnable() {
             @Override
