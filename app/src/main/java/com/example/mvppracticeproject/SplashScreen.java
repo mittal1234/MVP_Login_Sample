@@ -2,16 +2,13 @@ package com.example.mvppracticeproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.LoginFilter;
-import android.util.Log;
 
-import com.example.mvppracticeproject.Home.HomeActivity;
-import com.example.mvppracticeproject.Login.LoginActivity;
+import com.example.mvppracticeproject.home.HomeActivity;
+import com.example.mvppracticeproject.login.LoginActivity;
 
 public class SplashScreen extends AppCompatActivity {
     int value;

@@ -1,18 +1,231 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home.HomeActivity">
+    android:background="@color/color_353535"
+
+    tools:context=".home.ShowCarActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_maker"
+                android:textColorHint="@color/color_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_maker"
+                    android:backgroundTint="@color/color_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="false"
+                    style="@style/AppTheme"
+                    android:focusable="false"
+                    android:hint="Make"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="@color/color_tab_unselect"
+                    android:textColorHint="@color/color_white"
+                    android:textSize="11dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:paddingBottom="2dp"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                android:src="@android:drawable/arrow_down_float"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_model"
+                android:textColorHint="@color/color_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:hint="Model(Optional)"
+                    android:backgroundTint="@color/color_white"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="@color/color_tab_unselect"
+                    android:textColorHint="@color/color_white"
+                    android:textSize="11dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:paddingBottom="2dp"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                android:src="@android:drawable/arrow_down_float"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_year"
+                android:textColorHint="@color/color_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:backgroundTint="@color/color_white"
+                    android:hint="Purpose"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="@color/color_tab_unselect"
+                    android:textColorHint="@color/color_white"
+                    android:textSize="11dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                android:src="@android:drawable/arrow_down_float"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="5dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:textColor="@color/color_white"
+                android:layout_height="20dp"
+                android:text="Description"
+                android:textSize="15sp" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_condition"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_below="@+id/tv_description"
+                android:layout_marginTop="5dp"
+                android:gravity="top"
+                android:hint="Type here........"
+                android:paddingRight="10dp"
+                android:paddingBottom="15dp"
+                android:textColorHint="@color/color_white"
+                android:background="@color/color_black"
+                android:textColor="@color/color_tab_unselect"
+                android:textSize="11dp" />
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="260dp">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:textColor="@color/color_white"
+                android:id="@+id/tv_Provideyourimage"
+                android:text="Provide Your Image(Optional)" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/color_black"
+                android:layout_below="@+id/tv_Provideyourimage"
+                />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="60dp"
+                android:id="@+id/img_addbtn"
+                android:layout_height="60dp"
+                android:src="@android:drawable/ic_menu_add"
+                android:scaleType="centerCrop"
+                android:tint="@color/color_white"
+                android:layout_centerInParent="true"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/img_addbtn"
+                android:layout_centerInParent="true"
+                android:text="Add Image/Vedio"
+                android:textColor="@color/color_white"
+                android:textSize="18sp"
+                android:layout_height="wrap_content"/>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
     <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
-        android:textColor="@color/colorPrimaryDark"
-        android:fontFamily="monospace"
-        android:text="welcome to Home Page"/>
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/btn_add"
+        android:layout_height="40dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_rect_btn"
+        android:text="Add"
+        android:textSize="18sp"
+        android:textColor="@color/color_white"
+        android:gravity="center"
+        />
 
 </RelativeLayout>

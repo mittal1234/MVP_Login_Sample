@@ -1,4 +1,4 @@
-package com.example.mvppracticeproject.Signup;
+package com.example.mvppracticeproject.signup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.mvppracticeproject.Login.LoginActivity;
+import com.example.mvppracticeproject.login.LoginActivity;
 import com.example.mvppracticeproject.R;
 
 public class SignupActivity extends AppCompatActivity implements ISingup {

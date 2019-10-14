@@ -1,4 +1,4 @@
-package com.example.mvppracticeproject.Signup;
+package com.example.mvppracticeproject.signup;
 
 import android.text.TextUtils;
 

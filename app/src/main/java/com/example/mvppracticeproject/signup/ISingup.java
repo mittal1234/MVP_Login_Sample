@@ -1,4 +1,4 @@
-package com.example.mvppracticeproject.Signup;
+package com.example.mvppracticeproject.signup;
 
 public interface ISingup {
     void onSignUp(String phoneNumber,String password);

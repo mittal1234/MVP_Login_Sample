@@ -1,4 +1,4 @@
-package com.example.mvppracticeproject.Login;
+package com.example.mvppracticeproject.login;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,9 +11,9 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.example.mvppracticeproject.Home.HomeActivity;
+import com.example.mvppracticeproject.home.HomeActivity;
 import com.example.mvppracticeproject.R;
-import com.example.mvppracticeproject.Signup.SignupActivity;
+import com.example.mvppracticeproject.signup.SignupActivity;
 
 public class LoginActivity extends AppCompatActivity implements ILogin {
 
